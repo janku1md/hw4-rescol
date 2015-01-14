@@ -1,0 +1,63 @@
+@import 'bourbon/bourbon';
+$gutter: em(47px);
+@import 'neat/neat';
+
+/*   mobile  */
+$tablet: new-breakpoint(min-width 501px max-width 840px 12);
+$mobile: new-breakpoint(max-width 500px 4);
+
+
+/*  colors  */
+
+$picton-blue: #5ca4d5;
+$white: #fff;
+
+$primary-color: $picton-blue;
+$secondary-color: $white;
+
+/*   fonts   */
+
+$helvetica: "helvetica", sans-serif;
+
+$primary-font: $helvetica;
+
+/*  layout  */
+
+body {
+  font-family: $helvetica;
+}
+
+
+
+
+.container {
+  @include outer-container;
+}
+
+.meal {
+  @include span-columns(4);
+
+  @include media($tablet) {
+    @include span-columns(12);
+  }
+
+  @include media($mobile) {
+    @include span-columns(4)
+  }
+}
+
+img {
+  @include media($tablet) {
+    @include span-columns(6);
+  }
+
+  max-width: 100%;
+}
+
+.food-image {
+  @include media($tablet) {
+    @include span-columns(6);
+  }
+
+  display: inline-block;
+}
